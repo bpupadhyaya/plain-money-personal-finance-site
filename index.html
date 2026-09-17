@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlainMoney — Plain-language money help, free forever where it matters</title>
+<meta name="description" content="Understand budgeting, debt, saving, credit, and scams in plain language — free calculators and guides, no signup. The full private, on-device app keeps your real numbers off the internet entirely.">
+<link rel="canonical" href="https://equalinformation.com/plain-money-personal-finance-site/">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<meta name="theme-color" content="#123328">
+<meta property="og:title" content="PlainMoney — Plain-language money help, free forever where it matters">
+<meta property="og:description" content="Free calculators and plain-language guides on budgeting, debt, saving, and scams. The app keeps your real numbers private, on your device, forever.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PlainMoney">
+<link rel="stylesheet" href="assets/fonts/inter.css">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav aria-label="Main">
+  <div class="nav-inner">
+    <a href="./" class="nav-logo">
+      <img src="assets/img/favicon.svg" alt="" width="32" height="32">
+      <span>PlainMoney</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#tools">Try a calculator</a></li>
+      <li><a href="learn/">Learn</a></li>
+      <li><a href="safety/">Safety</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#apps" class="nav-cta">Get the app</a></li>
+    </ul>
+    <button class="mobile-menu-btn" onclick="document.getElementById('nav-links').classList.toggle('show')" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">No accounts &middot; No bank-linking &middot; Explains, never advises</p>
+    <h1>Understand your money.<br><span class="accent">Before you spend it.</span></h1>
+    <p class="tagline">Budgeting, debt, saving, credit, and scams — in plain language.</p>
+    <p class="lede">
+      PlainMoney is a free set of calculators and guides for the everyday money questions
+      nobody explains well. Try the tools right here, no signup. The mobile app carries the
+      same honesty further — it keeps your real numbers entirely on your own device.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#tools">Try a calculator</a>
+      <a class="btn btn-ghost" href="#how">See how it works</a>
+    </div>
+
+    <div class="phone" aria-hidden="true">
+      <div class="phone-top">
+        <span class="phone-title">Today &middot; cash left until payday</span>
+      </div>
+      <div class="phone-hero">
+        <div class="amt">$412</div>
+        <div class="cap">left &middot; 6 days to payday</div>
+      </div>
+      <div class="phone-bar">
+        <span style="height:40%"></span><span style="height:70%"></span><span style="height:55%"></span>
+        <span style="height:80%"></span><span style="height:30%" class="low"></span><span style="height:60%"></span>
+        <span style="height:45%"></span><span style="height:65%"></span><span style="height:50%"></span>
+        <span style="height:75%"></span><span style="height:35%" class="low"></span><span style="height:58%"></span>
+        <span style="height:62%"></span><span style="height:48%"></span>
+      </div>
+      <div class="phone-row"><span class="tag">Rent due</span><span class="val">in 4 days</span></div>
+      <div class="phone-row"><span class="tag">Emergency fund</span><span class="val">3.2 mo</span></div>
+      <div class="phone-note">Illustrative preview of the app's Today tab — not live data.</div>
+    </div>
+
+    <ul class="hero-points">
+      <li>Nothing you type on this site is saved</li>
+      <li>Safety guidance is free forever</li>
+      <li>The app never links to your bank</li>
+    </ul>
+  </div>
+</header>
+
+<!-- ============ PRINCIPLES STRIP ============ -->
+<section class="sources" aria-label="Principles">
+  <div class="wrap">
+    <p class="sources-label">The same rules on this site and in the app</p>
+    <ul class="source-chips">
+      <li>No backend</li>
+      <li>No accounts</li>
+      <li>No analytics or trackers</li>
+      <li>No bank-linking, ever</li>
+      <li>No credit checks</li>
+      <li>Safety content free forever</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ TOOLS ============ -->
+<section id="tools" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Try it now</p>
+      <h2>Real calculators, right in your browser</h2>
+      <p class="section-lede">
+        Type your own numbers — nothing leaves this page. These are two of the app's built-in
+        tools; the full library of calculators lives in <a href="tools/">Tools</a>.
+      </p>
+    </div>
+
+    <div class="grid cols-2" style="align-items:start">
+      <div class="tool-card" data-tool="503020">
+        <h3>The 50/30/20 budget split</h3>
+        <p class="tool-desc">A starting split for take-home pay: needs, wants, and savings.</p>
+        <div class="tool-row">
+          <div class="field">
+            <label for="t1-income">Monthly take-home pay</label>
+            <input id="t1-income" type="number" min="0" step="50" value="4200" data-in="income">
+          </div>
+        </div>
+        <div data-out></div>
+        <p class="tool-not-saved">&#9679; Not saved anywhere</p>
+      </div>
+
+      <div class="tool-card" data-tool="emergency-fund">
+        <h3>Emergency fund target</h3>
+        <p class="tool-desc">A cushion sized to your own essential monthly spending.</p>
+        <div class="tool-row" style="grid-template-columns:1fr 1fr">
+          <div class="field">
+            <label for="t2-essentials">Essential spending / month</label>
+            <input id="t2-essentials" type="number" min="0" step="50" value="2400" data-in="essentials">
+          </div>
+          <div class="field">
+            <label for="t2-months">Months of cushion</label>
+            <input id="t2-months" type="number" min="1" max="12" step="1" value="3" data-in="months">
+          </div>
+        </div>
+        <div data-out></div>
+        <p class="tool-not-saved">&#9679; Not saved anywhere</p>
+      </div>
+    </div>
+
+    <div class="app-plug">
+      <img src="assets/img/favicon.svg" alt="">
+      <p>This page computes from numbers you type once. In the app, tools like this read your
+      actual logged income and spending automatically — irregular-income averaging, a real
+      cash-flow calendar, budget caps that track what you've already spent this month.
+      <a href="#apps">See what's app-only &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how" class="section tint">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">How the app is organized</p>
+      <h2>Four tabs. Nothing about you leaves your phone.</h2>
+      <p class="section-lede">This site mirrors the app's shape, minus the parts that need your real, private data.</p>
+    </div>
+    <ol class="steps">
+      <li>
+        <span class="step-num">1</span>
+        <h3>Today</h3>
+        <p>Cash left until payday, upcoming bills, and the tools that use your real numbers —
+        the irregular-income averager, cash-flow calendar, spending caps. On-device only.</p>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <h3>Learn</h3>
+        <p>Plain-language guides across 21 topics — budgeting to retirement to scams — each
+        ending with what it explains and, just as clearly, what it isn't advice about.</p>
+      </li>
+      <li>
+        <span class="step-num">3</span>
+        <h3>Safety</h3>
+        <p>Deterministic playbooks for fraud, coercive control, elder exploitation, and benefits
+        — no model involved, no paywall, ever. <a href="safety/">See the Safety hub &rarr;</a></p>
+      </li>
+      <li>
+        <span class="step-num">4</span>
+        <h3>Manage</h3>
+        <p>Your money system, currency lens, content packs, and — the whole point — a "Your
+        data" screen that exports or deletes everything, because it never left your device.</p>
+      </li>
+    </ol>
+    <p class="fineprint">
+      PlainMoney explains how things work. It never tells you what to buy, sell, pay first, or
+      borrow — every tool and guide ends with a plain line about what it isn't advice about.
+    </p>
+  </div>
+</section>
+
+<!-- ============ LEARN PREVIEW ============ -->
+<section id="learn" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Learn</p>
+      <h2>21 topics, in plain language</h2>
+      <p class="section-lede">A sample of what's here now — the app carries the complete library, on-device, with your own numbers worked in.</p>
+    </div>
+    <div class="grid cols-3">
+      <a class="card card-link hoverable" href="learn/emergency-fund.html">
+        <span class="badge badge-free">Free</span>
+        <h3 style="margin-top:10px">How big should an emergency fund be?</h3>
+        <p>3 vs. 6 months of essentials, and where to actually keep the money.</p>
+        <span class="try">Read the guide &rarr;</span>
+      </a>
+      <a class="card card-link hoverable" href="learn/rent-to-own-and-payday-loans.html">
+        <span class="badge badge-forever">Free forever</span>
+        <h3 style="margin-top:10px">What rent-to-own and payday loans really cost</h3>
+        <p>The true annualized cost, and why these products trap rather than just cost.</p>
+        <span class="try">Read the guide &rarr;</span>
+      </a>
+      <a class="card card-link hoverable" href="learn/compound-interest.html">
+        <span class="badge badge-free">Free</span>
+        <h3 style="margin-top:10px">How compounding actually adds up</h3>
+        <p>Why starting early beats a larger amount later — with a live calculator.</p>
+        <span class="try">Read the guide &rarr;</span>
+      </a>
+    </div>
+    <div class="cta-row" style="margin-top:32px">
+      <a class="btn btn-ghost" href="learn/">Browse all 21 topics &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SAFETY (never gated, no plug nearby) ============ -->
+<section class="section tint">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Free forever &mdash; no exceptions</p>
+      <h2>Safety guidance is never behind a paywall</h2>
+      <p class="section-lede">
+        Fraud, coercive financial control, elder exploitation, disability benefits, and disaster
+        recovery — this content is deterministic (no model involved), always free, in the app
+        and on this site, for as long as PlainMoney exists.
+      </p>
+    </div>
+    <div class="grid cols-4">
+      <div class="card"><span class="badge badge-forever">Free forever</span><h3 style="margin-top:10px">Financial fraud</h3><p>Scam patterns, safe money-moving, identity-theft recovery.</p></div>
+      <div class="card"><span class="badge badge-forever">Free forever</span><h3 style="margin-top:10px">Coercive control</h3><p>Signs of financial abuse and a safe first step.</p></div>
+      <div class="card"><span class="badge badge-forever">Free forever</span><h3 style="margin-top:10px">Benefits & assistance</h3><p>Eligibility basics, Social Security, disaster recovery.</p></div>
+      <div class="card"><span class="badge badge-forever">Free forever</span><h3 style="margin-top:10px">Local resources</h3><p>Food banks, tax clinics, and nonprofit debt help — offline directory.</p></div>
+    </div>
+    <div class="cta-row" style="margin-top:32px">
+      <a class="btn btn-ghost" href="safety/">Open the Safety hub &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EVIDENCE / VERSUS ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Explain, never advise</p>
+      <h2>Why this reads differently than most finance apps</h2>
+    </div>
+    <div class="versus">
+      <div class="v-col v-them">
+        <h3>Most budgeting apps</h3>
+        <ul>
+          <li>Ask you to link your bank account</li>
+          <li>Make money from your data or ads</li>
+          <li>Tell you what to do with your money</li>
+          <li>Gate basic safety information behind a subscription</li>
+        </ul>
+      </div>
+      <div class="v-col v-us">
+        <h3>PlainMoney</h3>
+        <ul>
+          <li>Never links to a bank, ever — you type in your own numbers</li>
+          <li>No accounts, no analytics, no ads, no third-party SDKs</li>
+          <li>Explains how things work — the decision stays yours</li>
+          <li>Safety content is free forever, with no Pro UI anywhere near it</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPS CTA ============ -->
+<section id="apps" class="section apps-band">
+  <div class="wrap apps-grid">
+    <div>
+      <p class="kicker" style="background:rgba(255,255,255,.14);color:#eafaf1">iOS &amp; Android</p>
+      <h2>The private half lives in the app</h2>
+      <p class="section-lede lede-light">
+        This site is the public, stateless half — try the math, read the guides, nothing saved.
+        The app is where PlainMoney actually works for you: your real income and spending,
+        an irregular-income averager, a cash-flow calendar, budget caps, savings goals — all on
+        your device, never uploaded anywhere. Free forever covers 73 of the app's 105 features,
+        including everything in Safety. Pro is $4.99/month or $34.99/year for the deeper tools:
+        net worth, loan comparison, quarterly-tax set-asides, and more.
+      </p>
+      <div class="cta-row">
+        <span class="store-pill disabled">App Store — coming soon</span>
+        <span class="store-pill disabled">Google Play — coming soon</span>
+      </div>
+      <p class="tool-note" style="color:#c7ddcf;margin-top:10px">Both apps are in store review as of this writing — this page will switch to live download links the moment they're approved.</p>
+    </div>
+    <ul class="apps-points">
+      <li><strong>Your real numbers, on your device</strong> — never uploaded, never linked to a bank</li>
+      <li><strong>Free forever core</strong> — budgeting, debt, saving basics, and all of Safety</li>
+      <li><strong>Pro unlocks the deeper tools</strong> — $4.99/mo or $34.99/yr, cancel anytime</li>
+      <li><strong>Export or delete everything</strong> — one screen, because it's already only yours</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <ul class="footer-links">
+      <li><a href="learn/">Learn</a></li>
+      <li><a href="tools/">Tools</a></li>
+      <li><a href="safety/">Safety</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+      <li><a href="https://equalinformation.com" target="_blank" rel="noopener">EqualInformation</a></li>
+    </ul>
+    <p class="footer-copy">
+      Contact: <a href="mailto:contact@equalinformation.com">contact@equalinformation.com</a><br>
+      &copy; 2026 EqualInformation, LLC. All rights reserved.<br>
+      PlainMoney provides general educational information, not financial, legal, or tax advice.
+      <a href="privacy.html">This site stores nothing about you</a> — no accounts, no tracking.
+    </p>
+  </div>
+</footer>
+
+<script>
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.section .wrap').forEach(function (el) { el.classList.add('reveal'); io.observe(el); });
+  }
+  document.querySelectorAll('.nav-links a').forEach(function (a) {
+    a.addEventListener('click', function () { document.getElementById('nav-links').classList.remove('show'); });
+  });
+</script>
+<script src="assets/js/tools.js"></script>
+
+</body>
+</html>

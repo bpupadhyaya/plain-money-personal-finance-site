@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools — PlainMoney</title>
+<meta name="description" content="Free calculators: 50/30/20 budget split, emergency fund target, compound growth, real-cost/inflation, and debt payoff order. No signup, nothing saved.">
+<link rel="canonical" href="https://equalinformation.com/plain-money-personal-finance-site/tools/">
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<meta name="theme-color" content="#123328">
+<link rel="stylesheet" href="../assets/fonts/inter.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+.growth-chart{display:flex;align-items:flex-end;gap:2px;height:80px;margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px}
+.growth-chart span{background:var(--green-500);border-radius:2px 2px 0 0;min-height:2px}
+.debt-row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin-bottom:10px}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo"><img src="../assets/img/favicon.svg" alt="" width="32" height="32"><span>PlainMoney</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="./">Tools</a></li>
+      <li><a href="../learn/">Learn</a></li>
+      <li><a href="../safety/">Safety</a></li>
+      <li><a href="../#apps" class="nav-cta">Get the app</a></li>
+    </ul>
+    <button class="mobile-menu-btn" onclick="document.getElementById('nav-links').classList.toggle('show')" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+<div class="crumbs"><div class="wrap"><a href="../">Home</a><span class="sep">&rsaquo;</span><span class="current">Tools</span></div></div>
+
+<main>
+<header class="hero hero-sub">
+  <div class="wrap">
+    <p class="kicker">Tools</p>
+    <h1>Five calculators. No signup. Nothing saved.</h1>
+    <p class="lede">These are teaser versions of tools that live in the app — there, they read your real logged income and spending automatically instead of a one-time number you type in.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <div class="grid cols-2" style="align-items:start">
+
+      <div class="tool-card" data-tool="503020">
+        <span class="badge badge-free">Free</span>
+        <h3 style="margin-top:10px">The 50/30/20 budget split</h3>
+        <p class="tool-desc">A starting split for take-home pay: needs, wants, and savings.</p>
+        <div class="tool-row"><div class="field"><label for="ti-income">Monthly take-home pay</label><input id="ti-income" type="number" min="0" step="50" value="4200" data-in="income"></div></div>
+        <div data-out></div>
+        <p class="tool-not-saved">&#9679; Not saved anywhere</p>
+      </div>
+
+      <div class="tool-card" data-tool="emergency-fund">
+        <span class="badge badge-free">Free</span>
+        <h3 style="margin-top:10px">Emergency fund target</h3>
+        <p class="tool-desc">A cushion sized to your own essential monthly spending.</p>
+        <div class="tool-row" style="grid-template-columns:1fr 1fr">
+          <div class="field"><label for="ti-essentials">Essential spending / month</label><input id="ti-essentials" type="number" min="0" step="50" value="2400" data-in="essentials"></div>
+          <div class="field"><label for="ti-months">Months of cushion</label><input id="ti-months" type="number" min="1" max="12" step="1" value="3" data-in="months"></div>
+        </div>
+        <div data-out></div>
+        <p class="tool-not-saved">&#9679; Not saved anywhere</p>
+      </div>
+
+      <div class="tool-card" data-tool="compound">
+        <span class="badge badge-free">Free</span>
+        <h3 style="margin-top:10px">Compound growth projector</h3>
+        <p class="tool-desc">See how a starting amount plus monthly contributions grow over time.</p>
+        <div class="tool-row" style="grid-template-columns:1fr 1fr">
+          <div class="field"><label for="ti-start">Starting amount</label><input id="ti-start" type="number" min="0" step="100" value="1000" data-in="start"></div>
+          <div class="field"><label for="ti-monthly">Monthly contribution</label><input id="ti-monthly" type="number" min="0" step="25" value="150" data-in="monthly"></div>
+        </div>
+        <div class="tool-row" style="grid-template-columns:1fr 1fr">
+          <div class="field"><label for="ti-rate">Annual return (%)</label><input id="ti-rate" type="number" min="0" max="20" step="0.1" value="6" data-in="rate"></div>
+          <div class="field"><label for="ti-years">Years</label><input id="ti-years" type="number" min="1" max="50" step="1" value="20" data-in="years"></div>
+        </div>
+        <div class="growth-chart" data-chart></div>
+        <div data-out style="margin-top:14px"></div>
+        <p class="tool-not-saved">&#9679; Not saved anywhere</p>
+      </div>
+
+      <div class="tool-card" data-tool="real-cost">
+        <span class="badge badge-free">Free</span>
+        <h3 style="margin-top:10px">Real cost / inflation</h3>
+        <p class="tool-desc">What an amount today will need to become to buy the same thing later.</p>
+        <div class="tool-row" style="grid-template-columns:1fr 1fr 1fr">
+          <div class="field"><label for="ti-amount">Amount</label><input id="ti-amount" type="number" min="0" step="50" value="1000" data-in="amount"></div>
+          <div class="field"><label for="ti-yrs2">Years</label><input id="ti-yrs2" type="number" min="0" step="1" value="10" data-in="years"></div>
+          <div class="field"><label for="ti-infl">Inflation (%/yr)</label><input id="ti-infl" type="number" min="0" step="0.1" value="3" data-in="inflation"></div>
+        </div>
+        <div data-out></div>
+        <p class="tool-not-saved">&#9679; Not saved anywhere</p>
+      </div>
+
+      <div class="tool-card" data-tool="debt-order" style="grid-column:1/-1">
+        <span class="badge badge-free">Free</span>
+        <h3 style="margin-top:10px">Debt payoff order — snowball vs. avalanche</h3>
+        <p class="tool-desc">Enter up to three debts to compare paying smallest-balance-first against highest-rate-first.</p>
+        <div data-debt-row class="debt-row">
+          <div class="field"><label>Name</label><input type="text" data-debt="name" value="Credit card"></div>
+          <div class="field"><label>Balance</label><input type="number" min="0" step="50" data-debt="balance" value="2400"></div>
+          <div class="field"><label>APR %</label><input type="number" min="0" step="0.1" data-debt="apr" value="24.9"></div>
+        </div>
+        <div data-debt-row class="debt-row">
+          <div class="field"><label>Name</label><input type="text" data-debt="name" value="Car loan"></div>
+          <div class="field"><label>Balance</label><input type="number" min="0" step="50" data-debt="balance" value="9800"></div>
+          <div class="field"><label>APR %</label><input type="number" min="0" step="0.1" data-debt="apr" value="6.5"></div>
+        </div>
+        <div data-debt-row class="debt-row">
+          <div class="field"><label>Name</label><input type="text" data-debt="name" value="Student loan"></div>
+          <div class="field"><label>Balance</label><input type="number" min="0" step="50" data-debt="balance" value="15200"></div>
+          <div class="field"><label>APR %</label><input type="number" min="0" step="0.1" data-debt="apr" value="5.2"></div>
+        </div>
+        <div data-out style="margin-top:8px"></div>
+        <p class="tool-not-saved">&#9679; Not saved anywhere</p>
+      </div>
+
+    </div>
+
+    <div class="iap-plug">
+      <img class="iap-icon" src="../assets/img/favicon.svg" alt="">
+      <div class="iap-copy">
+        <strong>13 more tools live in the app.</strong>
+        <p>Paycheck decoder, rent-vs-buy, BNPL/payday true-cost, extra-payment payoff simulator on the free side; net worth, loan comparison, FI number, quarterly-tax set-aside, and more on Pro ($4.99/mo or $34.99/yr) — all computed from your real, on-device numbers.</p>
+      </div>
+      <div class="iap-cta"><a class="btn btn-primary" href="../#apps">See the app &rarr;</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <ul class="footer-links">
+      <li><a href="../learn/">Learn</a></li>
+      <li><a href="../safety/">Safety</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="https://equalinformation.com" target="_blank" rel="noopener">EqualInformation</a></li>
+    </ul>
+    <p class="footer-copy">Contact: <a href="mailto:contact@equalinformation.com">contact@equalinformation.com</a><br>&copy; 2026 EqualInformation, LLC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav-links').classList.remove('show');});});</script>
+<script src="../assets/js/tools.js"></script>
+</body>
+</html>

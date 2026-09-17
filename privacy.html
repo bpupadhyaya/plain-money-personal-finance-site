@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy — PlainMoney</title>
+<meta name="description" content="This website stores nothing about you: no accounts, no analytics, no cookies, no server-side storage. The mobile app stores your real data only on your own device.">
+<link rel="canonical" href="https://equalinformation.com/plain-money-personal-finance-site/privacy.html">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<meta name="theme-color" content="#123328">
+<link rel="stylesheet" href="assets/fonts/inter.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>.article{max-width:720px;margin:0 auto}.article h2{margin-top:34px}.article p{color:var(--ink-soft);font-size:16px;margin-top:12px}.article ul{color:var(--ink-soft);font-size:16px;margin-top:12px;padding-left:22px}.article li{margin-bottom:8px}</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="nav-inner">
+    <a href="./" class="nav-logo"><img src="assets/img/favicon.svg" alt="" width="32" height="32"><span>PlainMoney</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="tools/">Tools</a></li>
+      <li><a href="learn/">Learn</a></li>
+      <li><a href="safety/">Safety</a></li>
+      <li><a href="#apps" class="nav-cta">Get the app</a></li>
+    </ul>
+    <button class="mobile-menu-btn" onclick="document.getElementById('nav-links').classList.toggle('show')" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+<div class="crumbs"><div class="wrap"><a href="./">Home</a><span class="sep">&rsaquo;</span><span class="current">Privacy</span></div></div>
+
+<main>
+<header class="hero hero-sub"><div class="wrap"><p class="kicker">Privacy</p><h1>Two products, two privacy stories</h1><p class="lede">This website and the mobile app are different codebases with different jobs. Here's exactly what each one does and doesn't do with your information.</p></div></header>
+
+<section class="section">
+  <div class="wrap article">
+    <h2>This website (what you're on now)</h2>
+    <ul>
+      <li><strong>No accounts.</strong> There is nothing to sign up for.</li>
+      <li><strong>No analytics, no trackers, no ads, no third-party scripts.</strong> The calculators run entirely in your browser with plain JavaScript.</li>
+      <li><strong>No server-side storage.</strong> This is a static site — numbers you type into a calculator are used to compute a result in your browser and are never sent anywhere.</li>
+      <li><strong>No cookies, no localStorage for your inputs.</strong> Refresh the page and everything you typed is gone — deliberately, so the "nothing is saved" claim is literally true, not just a policy promise.</li>
+      <li>Standard GitHub Pages hosting logs (IP address, requested page) may be retained by GitHub itself for operational purposes — this site has no visibility into or control over those, the same as any GitHub Pages site.</li>
+    </ul>
+
+    <h2>The mobile app</h2>
+    <p>The app is a separate, private codebase with its own hard rules, carried since its first
+    line of code:</p>
+    <ul>
+      <li><strong>No backend, no accounts, no analytics, no crash reporting, no third-party SDKs.</strong> The only network calls the app ever makes are two official currency-rate feeds (European Central Bank, UN Treasury) — nothing about you is in those requests.</li>
+      <li><strong>Never bank-linking, OAuth, or credentials.</strong> All your money data is typed in by you.</li>
+      <li><strong>Your data lives only on your device</strong>, in local on-device storage, and never leaves it.</li>
+      <li><strong>Export or delete everything, anytime</strong> — a single screen in the app (Manage &rarr; Your data) does both.</li>
+    </ul>
+
+    <h2>Why two different approaches</h2>
+    <p>A public website can't securely hold anyone's real financial details — anything typed into
+    a browser session is, at best, as private as that browser tab. The app can, because it never
+    transmits anything: your real numbers stay in local storage on hardware you control, protected
+    by your device's own lock screen and encryption, with no server anywhere in the picture to
+    breach, subpoena, or misconfigure. That's the actual reason to use the app for anything you
+    want to keep private — not a marketing claim, an architectural one.</p>
+
+    <div class="fineprint" style="text-align:left">This page describes both products as built. It
+    is not a substitute for each product's formal privacy policy where one is required by an app
+    store.</div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <ul class="footer-links">
+      <li><a href="learn/">Learn</a></li>
+      <li><a href="tools/">Tools</a></li>
+      <li><a href="safety/">Safety</a></li>
+      <li><a href="https://equalinformation.com" target="_blank" rel="noopener">EqualInformation</a></li>
+    </ul>
+    <p class="footer-copy">Contact: <a href="mailto:contact@equalinformation.com">contact@equalinformation.com</a><br>&copy; 2026 EqualInformation, LLC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav-links').classList.remove('show');});});</script>
+</body>
+</html>

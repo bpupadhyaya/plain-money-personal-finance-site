@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How compounding actually adds up — PlainMoney</title>
+<meta name="description" content="Why starting early beats contributing more later. Plain-language explanation with a live compound-growth calculator.">
+<link rel="canonical" href="https://equalinformation.com/plain-money-personal-finance-site/learn/compound-interest.html">
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<meta name="theme-color" content="#123328">
+<link rel="stylesheet" href="../assets/fonts/inter.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+.article{max-width:720px;margin:0 auto}.article h2{margin-top:38px}.article p{color:var(--ink-soft);font-size:16px;margin-top:12px}
+.growth-chart{display:flex;align-items:flex-end;gap:2px;height:90px;margin-top:14px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px}
+.growth-chart span{background:var(--green-500);border-radius:2px 2px 0 0;min-height:2px}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo"><img src="../assets/img/favicon.svg" alt="" width="32" height="32"><span>PlainMoney</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../tools/">Tools</a></li>
+      <li><a href="./">Learn</a></li>
+      <li><a href="../safety/">Safety</a></li>
+      <li><a href="../#apps" class="nav-cta">Get the app</a></li>
+    </ul>
+    <button class="mobile-menu-btn" onclick="document.getElementById('nav-links').classList.toggle('show')" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+<div class="crumbs"><div class="wrap"><a href="../">Home</a><span class="sep">&rsaquo;</span><a href="./">Learn</a><span class="sep">&rsaquo;</span><span class="current">Compound interest</span></div></div>
+
+<main>
+<header class="hero hero-sub">
+  <div class="wrap">
+    <p class="kicker">Module C &middot; Saving &amp; Investing Basics &middot; Free</p>
+    <h1 style="font-size:clamp(28px,4.5vw,42px)">How compounding actually adds up</h1>
+    <p class="lede">Time in the market does more work than most people expect — see it with your own numbers below.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap article">
+    <h2>The idea in one line</h2>
+    <p>When growth is left in place, it starts earning its own growth — a balance that grows
+    5% doesn't just add 5% of the original amount each year, it adds 5% of whatever it's grown
+    to. Over enough years, that compounding effect does more of the work than the money you
+    actually put in.</p>
+
+    <h2>Why starting early matters more than starting big</h2>
+    <p>The same total contribution, spread over more years, usually ends up larger than a bigger
+    contribution spread over fewer years — because the earlier dollars had more time to compound.
+    This is why "start now, even small" is common advice-adjacent framing you'll hear everywhere;
+    the arithmetic below shows why, without telling you what to actually invest in.</p>
+
+    <h2>See it with your own numbers</h2>
+    <div class="tool-card" data-tool="compound" style="margin-top:20px">
+      <div class="tool-row" style="grid-template-columns:1fr 1fr">
+        <div class="field"><label for="c-start">Starting amount</label><input id="c-start" type="number" min="0" step="100" value="1000" data-in="start"></div>
+        <div class="field"><label for="c-monthly">Monthly contribution</label><input id="c-monthly" type="number" min="0" step="25" value="150" data-in="monthly"></div>
+      </div>
+      <div class="tool-row" style="grid-template-columns:1fr 1fr">
+        <div class="field"><label for="c-rate">Assumed annual return (%)</label><input id="c-rate" type="number" min="0" max="20" step="0.1" value="6" data-in="rate"></div>
+        <div class="field"><label for="c-years">Years</label><input id="c-years" type="number" min="1" max="50" step="1" value="20" data-in="years"></div>
+      </div>
+      <div class="growth-chart" data-chart></div>
+      <div data-out style="margin-top:14px"></div>
+      <p class="tool-not-saved">&#9679; Not saved anywhere</p>
+    </div>
+
+    <div class="app-plug" style="margin-top:30px">
+      <img src="../assets/img/favicon.svg" alt="">
+      <p>This is the exact same calculator built into the app's Learn &amp; Tools sections —
+      it works identically here, offline, with no account needed. <a href="../tools/">Try more calculators &rarr;</a></p>
+    </div>
+
+    <div class="fineprint" style="text-align:left">
+      <strong>What this is not:</strong> this shows the arithmetic of compounding at a steady
+      assumed return — real returns vary year to year and aren't guaranteed. It isn't advice
+      about what to invest in or how much risk to take; those depend on your situation.
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <ul class="footer-links">
+      <li><a href="../tools/">Tools</a></li>
+      <li><a href="../safety/">Safety</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="https://equalinformation.com" target="_blank" rel="noopener">EqualInformation</a></li>
+    </ul>
+    <p class="footer-copy">Contact: <a href="mailto:contact@equalinformation.com">contact@equalinformation.com</a><br>&copy; 2026 EqualInformation, LLC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav-links').classList.remove('show');});});</script>
+<script src="../assets/js/tools.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://equalinformation.com/plain-money-personal-finance-site/sitemap.xml
