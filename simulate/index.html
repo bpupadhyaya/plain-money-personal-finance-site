@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Journey of a Dollar — a paycheck flow simulation | PlainMoney</title>
+<meta name="description" content="Watch one paycheck flow from gross pay through taxes, needs, wants, savings, and debt payoff — an interactive Sankey simulation you can run forward in time to see compounding versus debt interest.">
+<link rel="canonical" href="https://equalinformation.com/plain-money-personal-finance-site/simulate/">
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<meta name="theme-color" content="#123328">
+<meta property="og:title" content="The Journey of a Dollar — a paycheck flow simulation">
+<meta property="og:description" content="An interactive Sankey simulation of one paycheck's journey through taxes, needs, wants, savings, and debt — and what it looks like run forward in time.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../assets/fonts/inter.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo"><img src="../assets/img/favicon.svg" alt="" width="32" height="32"><span>PlainMoney</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../tools/">Tools</a></li>
+      <li><a href="./" style="color:var(--green-700);font-weight:700">Simulate</a></li>
+      <li><a href="../learn/">Learn</a></li>
+      <li><a href="../safety/">Safety</a></li>
+      <li><a href="../#apps" class="nav-cta">Get the app</a></li>
+    </ul>
+    <button class="mobile-menu-btn" onclick="document.getElementById('nav-links').classList.toggle('show')" aria-label="Menu">&#9776;</button>
+  </div>
+</nav>
+<div class="crumbs"><div class="wrap"><a href="../">Home</a><span class="sep">&rsaquo;</span><span class="current">Simulate</span></div></div>
+
+<main>
+<header class="hero hero-sub">
+  <div class="wrap">
+    <p class="kicker">Simulate</p>
+    <h1 style="font-size:clamp(30px,4.8vw,46px)">The journey of a dollar</h1>
+    <p class="lede">Watch one paycheck actually move — through taxes, into needs and wants, and out
+    into savings, investing, and debt payoff. Drag the controls; the flow updates live. Nothing
+    here is saved.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+
+    <div class="sim-controls">
+      <div class="field-slider">
+        <label for="in-gross">Gross monthly pay</label>
+        <input id="in-gross" type="number" min="0" step="100" value="6000">
+      </div>
+      <div class="field-slider">
+        <label for="in-tax">Taxes &amp; FICA, effective rate (you set this) <span class="sim-val" id="out-tax">22%</span></label>
+        <input id="in-tax" type="range" min="0" max="45" step="1" value="22">
+      </div>
+      <div class="field-slider">
+        <label for="in-needs">Needs, share of take-home <span class="sim-val" id="out-needs">50%</span></label>
+        <input id="in-needs" type="range" min="0" max="100" step="1" value="50">
+      </div>
+      <div class="field-slider">
+        <label for="in-wants">Wants, share of take-home <span class="sim-val" id="out-wants">30%</span></label>
+        <input id="in-wants" type="range" min="0" max="100" step="1" value="30">
+      </div>
+      <div class="field-slider">
+        <label for="in-ef">Of savings &amp; debt bucket: emergency fund <span class="sim-val" id="out-ef">30%</span></label>
+        <input id="in-ef" type="range" min="0" max="100" step="1" value="30">
+      </div>
+      <div class="field-slider">
+        <label for="in-ret">Of savings &amp; debt bucket: retirement &amp; investing <span class="sim-val" id="out-ret">40%</span></label>
+        <input id="in-ret" type="range" min="0" max="100" step="1" value="40">
+      </div>
+    </div>
+    <p style="font-size:12.5px;color:var(--ink-faint);margin:-10px 0 20px">
+      Savings &amp; debt payoff bucket = whatever's left after Needs and Wants
+      (<span class="sim-val" id="out-savedebt">20%</span>). Within it, extra debt payoff =
+      whatever's left after emergency fund and retirement (<span class="sim-val" id="out-extradebt">30%</span>).
+    </p>
+
+    <div class="sankey-wrap">
+      <svg id="sankey-svg" role="img" aria-label="Sankey diagram of one paycheck's flow"></svg>
+    </div>
+    <div class="flow-cards" id="flow-cards"></div>
+
+    <div class="app-plug" style="margin-top:26px">
+      <img src="../assets/img/favicon.svg" alt="">
+      <p>This runs on a slider you set once. In the app, this same kind of flow is drawn from your
+      real logged paycheck and spending, automatically, every pay period.
+      <a href="../#apps">See what's app-only &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section tint">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">Run it forward</p>
+      <h2>The same pattern, over years</h2>
+      <p class="section-lede">Keep this exact split every month — what does the savings side grow
+      into, and how much flows out to debt, after a stretch of years?</p>
+    </div>
+
+    <div class="sim-controls" style="max-width:640px;margin:36px auto 0">
+      <div class="field-slider">
+        <label for="in-years">Years <span class="sim-val" id="out-years">20</span></label>
+        <input id="in-years" type="range" min="1" max="40" step="1" value="20">
+      </div>
+      <div class="field-slider">
+        <label for="in-growth">Assumed annual growth rate <span class="sim-val" id="out-growth">6.0%</span></label>
+        <input id="in-growth" type="range" min="0" max="12" step="0.5" value="6">
+      </div>
+    </div>
+    <div style="max-width:640px;margin:18px auto 0" id="forward-out"></div>
+    <p class="fineprint" style="max-width:640px">
+      <strong>What this is not:</strong> this shows the arithmetic of a fixed split and a steady
+      assumed growth rate, held constant for illustration — real income, spending, and returns all
+      change year to year. It isn't advice about how to split your own paycheck or what to invest
+      in; those depend on your situation.
+    </p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <ul class="footer-links">
+      <li><a href="../tools/">Tools</a></li>
+      <li><a href="../learn/">Learn</a></li>
+      <li><a href="../safety/">Safety</a></li>
+      <li><a href="../privacy.html">Privacy</a></li>
+      <li><a href="https://equalinformation.com" target="_blank" rel="noopener">EqualInformation</a></li>
+    </ul>
+    <p class="footer-copy">Contact: <a href="mailto:contact@equalinformation.com">contact@equalinformation.com</a><br>&copy; 2026 EqualInformation, LLC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('nav-links').classList.remove('show');});});</script>
+<script src="../assets/js/vendor/d3.v7.min.js"></script>
+<script src="../assets/js/vendor/d3-sankey.v0.12.min.js"></script>
+<script src="../assets/js/simulate.js"></script>
+</body>
+</html>
